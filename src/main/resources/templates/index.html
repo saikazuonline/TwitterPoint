@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8" />
-    <title>demo</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Welcome!</title>
+    
+    <div th:include="/common/bootstrap :: bootstrap_css"></div>
 </head>
 <body>
-<p th:each="user : ${users}" th:text="${user.name}" />
+    <div th:include="/common/bootstrap :: bootstrap_js"></div>
+
+    <p class="text-left" th:each="user : ${users}" th:text="${user.name}" />
+
 </body>
 </html>
