@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="container">
-	    <form class="form-horizontal">
+	    <form action="#" th:action="@{/tweet}" th:object="${tweetForm}" method="post" class="form-horizontal">
 	        <div class="form-group">
 	            <div class="col-xs-5">
-	                <input type="text" name="twiite" class="form-control">
+                    <input type="text" th:field="*{tweet}" class="form-control">
 	            </div>
 	        </div>
 	        <div class="form-group">

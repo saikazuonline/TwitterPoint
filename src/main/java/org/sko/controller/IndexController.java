@@ -3,6 +3,7 @@ package org.sko.controller;
 import java.util.List;
 
 import org.sko.domain.User;
+import org.sko.form.TweetForm;
 import org.sko.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +16,14 @@ public class IndexController {
     @Autowired
     UserMapper userMapper;
 
-    @RequestMapping
+    @RequestMapping("/")
     public String index(Model model) {
+
         List<User> list = userMapper.selectAll();
+
         model.addAttribute("users", list);
+
+        model.addAttribute("tweetForm", new TweetForm());
 
         return "index";
     }
